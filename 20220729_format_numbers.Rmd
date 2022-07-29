@@ -1,0 +1,71 @@
+---
+title: "Format Numbers"
+author: "Pep Porrà"
+date: "2022-07-29"
+output: git_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Goal
+
+Explain different ways to format numbers
+
+## Context
+
+Often we want to control the way numbers are printed. Common examples are the
+number of decimals of numbers in tables or include a currency with the numbers.
+As always, there are multiple ways to achive this goal. We summarize many of 
+the methods available here
+
+## Format cases
+
+We will concentrate in five format cases that can be combained among them:
+
+1. Decimals
+1. Lengths
+1. Units
+1. Prefix
+1. Percentage
+
+### Decimals
+
+```{r}
+# example
+n_ex<-  c(pi, 0.01, 2345.6789, 10000, 1/3)
+n_ex
+```
+
+Numbers are printed using default options in R:
+
+```{r}
+all_options <- options()
+```
+
+```{r}
+all_options$digits
+```
+```{r}
+all_options$scipen
+```
+
+```{r}
+all_options$width
+```
+First way to get a given number of decimals is function `round()`
+
+```{r}
+round(n_ex, digits = 2)
+
+```
+```{r}
+n_sci <- 100000000
+n_sci
+```
+
+```{r}
+round(n_sci, 2)
+```
+
